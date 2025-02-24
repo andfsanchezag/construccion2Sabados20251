@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import app.domain.models.Guest;
 import app.domain.models.InvoiceDetail;
@@ -15,7 +16,14 @@ import app.ports.InvoiceDetailPort;
 import app.ports.InvoiceHeaderPort;
 import app.ports.PersonPort;
 import app.ports.UserPort;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@Service
 public class GuestService {
 	@Autowired
 	private PersonPort personPort;

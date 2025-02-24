@@ -7,7 +7,13 @@ import app.adapters.persons.entity.PersonEntity;
 import app.adapters.persons.repository.PersonRepository;
 import app.domain.models.Person;
 import app.ports.PersonPort;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter
+@Getter
+@NoArgsConstructor
 @Service
 public class PersonAdapter implements PersonPort {
 	@Autowired

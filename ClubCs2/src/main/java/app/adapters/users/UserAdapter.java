@@ -10,7 +10,12 @@ import app.domain.models.Partner;
 import app.domain.models.Person;
 import app.domain.models.User;
 import app.ports.UserPort;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Setter
+@Getter
+@NoArgsConstructor
 @Service
 public class UserAdapter implements UserPort {
 	@Autowired
