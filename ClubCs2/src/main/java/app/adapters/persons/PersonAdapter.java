@@ -19,7 +19,7 @@ public class PersonAdapter implements PersonPort {
 
 	@Override
 	public void savePerson(Person person) {
-		PersonEntity personEntity = new PersonEntity(person);
+		PersonEntity personEntity = personAdapter(person);
 		personRepository.save(personEntity);
 		person.setPersonId(personEntity.getPersonId());
 	}
@@ -27,10 +27,10 @@ public class PersonAdapter implements PersonPort {
 	@Override
 	public Person findByDocument(long document) {
 		PersonEntity personEntity = personRepository.findByDocument(document);
-		return adapterPerson(personEntity);
+		return personAdapter(personEntity);
 	}
 
-	private Person adapterPerson(PersonEntity personEntity) {
+	private Person personAdapter(PersonEntity personEntity) {
 		Person person= new Person();
 		person.setPersonId(personEntity.getPersonId());
 		person.setDocument(personEntity.getDocument());
@@ -38,5 +38,17 @@ public class PersonAdapter implements PersonPort {
 		person.setCellPhone(personEntity.getCellPhone());
                 return person;
 	}
+	
+
+	private PersonEntity personAdapter(Person person) {
+		PersonEntity personEntity = new PersonEntity();
+		personEntity.setPersonId(person.getPersonId());
+		personEntity.setDocument(person.getDocument());
+		personEntity.setName(person.getName());
+		personEntity.setCellPhone(person.getCellPhone());
+		return personEntity;
+	}
+	
+	
 
 }
