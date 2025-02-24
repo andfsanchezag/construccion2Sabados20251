@@ -1,11 +1,16 @@
 package app.adapters.persons;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import app.adapters.persons.entity.PersonEntity;
 import app.adapters.persons.repository.PersonRepository;
 import app.domain.models.Person;
 import app.ports.PersonPort;
 
+@Service
 public class PersonAdapter implements PersonPort {
+	@Autowired
 	private PersonRepository personRepository;
 	@Override
 	public boolean existPerson(long document) {
@@ -31,6 +36,7 @@ public class PersonAdapter implements PersonPort {
 		person.setDocument(personEntity.getDocument());
 		person.setName(personEntity.getName());
 		person.setCellPhone(personEntity.getCellPhone());
+                return person;
 	}
 
 }

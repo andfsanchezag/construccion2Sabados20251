@@ -17,15 +17,21 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  *
  * @author ESTUDIANTE
  */
 public class AdminService {
-    
+   
+    @Autowired
     private PersonPort personPort;
+    @Autowired
     private UserPort userPort;
+    @Autowired
     private PartnerPort partnerPort;
+    @Autowired
     private InvoiceHeaderPort invoiceHeaderPort;
     
     public void registerPartner(Partner partner)throws Exception{

@@ -7,7 +7,6 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-
 public class Guest extends User {
 	private long guestId;
 	private Partner partner;

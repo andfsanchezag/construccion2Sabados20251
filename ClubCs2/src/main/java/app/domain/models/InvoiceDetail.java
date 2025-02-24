@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class InvoiceDetail {
 	private long invoiceDetailId;
-	private InvoiceHeader inoviceHeader;
+	private InvoiceHeader invoiceHeader;
 	private int item;
 	private String description;
 	private double amount;
@@ -18,7 +18,7 @@ public class InvoiceDetail {
 			double amount) {
 		super();
 		this.invoiceDetailId = invoiceDetailId;
-		this.inoviceHeader = inoviceHeader;
+		this.invoiceHeader = inoviceHeader;
 		this.item = item;
 		this.description = description;
 		this.amount = amount;
